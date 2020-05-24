@@ -3,6 +3,7 @@ import NavBar from '../Components/NavBar'
 import Jumbo from '../Components/Jumbo'
 
 const HomePage = () => {
+
   return (
     <div>
       <NavBar />
