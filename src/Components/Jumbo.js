@@ -5,6 +5,7 @@ import { CurrentUserContext } from '../Contexts/CurrentUserContext'
 const Jumbo = () => {
 
   const { currentUser } = useContext(CurrentUserContext)
+  
   return (
     <Jumbotron>
     <h1>Welcome to Game Grammar, {currentUser}!</h1>

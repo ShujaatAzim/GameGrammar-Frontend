@@ -1,19 +1,16 @@
-import React, { Component, createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const CurrentUserContext = createContext();
 
-class CurrentUserContextProvider extends Component {
-  state = {
-    currentUser: "Shu"
-  }
+const CurrentUserContextProvider = props => { 
 
-  render() {
-    return (
-      <CurrentUserContext.Provider value={{...this.state}}>
-        {this.props.children}
-      </CurrentUserContext.Provider>
-    )
-  }
+  const [currentUser, setCurrentUser] = useState("Shu")
+
+  return (
+    <CurrentUserContext.Provider value={currentUser, setCurrentUser}>
+      {props.children}
+    </CurrentUserContext.Provider>
+  )
 }
 
 export default CurrentUserContextProvider
