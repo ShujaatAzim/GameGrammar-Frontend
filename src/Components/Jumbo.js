@@ -1,12 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Jumbotron, Button } from 'react-bootstrap'
 import { CurrentUserContext } from '../Contexts/CurrentUserContext'
+import About from './About'
 
 const Jumbo = () => {
 
   const { currentUser } = useContext(CurrentUserContext)
-  
+
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
+    <>
     <Jumbotron>
     <h1>Welcome to Game Grammar, {currentUser}!</h1>
       <p>
@@ -14,9 +22,11 @@ const Jumbo = () => {
         the cracks! Let's help them out a bit, shall we?
       </p>
       <p>
-        <Button variant="primary">Learn more</Button>
+        <Button variant="primary" onClick={handleShow}>Learn More</Button>
       </p>
     </Jumbotron>
+    { show ? <About show={show} handleClose={handleClose} handleShow={handleShow}/> : null }
+    </>
   )
 }
 
