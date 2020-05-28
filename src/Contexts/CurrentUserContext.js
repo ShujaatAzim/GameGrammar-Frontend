@@ -4,10 +4,10 @@ export const CurrentUserContext = createContext();
 
 const CurrentUserContextProvider = props => { 
 
-  const [currentUser, setCurrentUser] = useState("Blue")
+  const [currentUser, setCurrentUser] = useState(null)
 
   return (
-    <CurrentUserContext.Provider value={{currentUser, setCurrentUser}}>
+    <CurrentUserContext.Provider value={currentUser, setCurrentUser}>
       {props.children}
     </CurrentUserContext.Provider>
   )
