@@ -1,10 +1,12 @@
 import React from 'react'
+import { Form, Button } from 'react-bootstrap'
+import '../Styles/App.css'
 
 const NewUserForm = props => {
   return(
     <div className="under-jumbo-half">
       <h3>Please Register Below!</h3>
-      <p>Returning user? <button onClick={props.swapForm}>Log in!</button></p>
+      <p>Returning user? <button onClick={() => props.swapStatus("login")}>Log in!</button></p>
       <br />
       <Form>
         <Form.Group controlId="formBasicEmail">

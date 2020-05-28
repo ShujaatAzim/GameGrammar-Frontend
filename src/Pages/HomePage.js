@@ -3,6 +3,8 @@ import { CurrentUserContext } from '../Contexts/CurrentUserContext'
 import NavBar from '../Components/NavBar'
 import Jumbo from '../Components/Jumbo'
 import LoginForm from '../Components/LoginForm'
+import Dashboard from '../Components/Dashboard'
+import NewUserForm from '../Components/NewUserForm'
 
 const HomePage = () => {
 
@@ -13,7 +15,8 @@ const HomePage = () => {
     <div>
       <NavBar />
       <Jumbo />
-      { currentUser ? <Dashboard /> : <LoginForm swapStatus={swapStatus} /> }
+      { currentUser ? <Dashboard currentUser={currentUser} /> : status === "login" ? <LoginForm swapStatus={swapStatus} /> : status === "register" ? 
+        <NewUserForm swapStatus={swapStatus} /> : null }
     </div>
   )
 }

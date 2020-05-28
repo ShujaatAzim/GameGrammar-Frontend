@@ -4,7 +4,7 @@ export const CurrentUserContext = createContext();
 
 const CurrentUserContextProvider = props => { 
 
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState("Shu")
 
   return (
     <CurrentUserContext.Provider value={{currentUser, setCurrentUser}}>

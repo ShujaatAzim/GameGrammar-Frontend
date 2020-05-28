@@ -7,7 +7,7 @@ const LoginForm = props => {
   return (
     <div className="under-jumbo-half">
       <h3>Please Log In Below!</h3>
-      <p>New user? <button onClick={props.swapForm}>Sign Up!</button></p>
+      <p>New user? <button onClick={() => props.swapStatus("register")}>Sign Up!</button></p>
       <br />
       <Form>
         <Form.Group controlId="formBasicEmail">
