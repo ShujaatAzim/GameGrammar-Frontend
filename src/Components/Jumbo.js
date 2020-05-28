@@ -16,7 +16,7 @@ const Jumbo = () => {
   return (
     <>
     <Jumbotron>
-    <h1>Welcome to Game Grammar, {currentUser}!</h1>
+      { currentUser ? <h1>Welcome to Game Grammar, {currentUser}!</h1> : <h1>Welcome to Game Grammar!</h1> }
       <p>
         Have you noticed grammar errors in games? Game companies and creators are super busy, and things fall through 
         the cracks! Let's help them out a bit, shall we?

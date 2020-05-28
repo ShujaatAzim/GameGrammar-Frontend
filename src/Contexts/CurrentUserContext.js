@@ -7,7 +7,7 @@ const CurrentUserContextProvider = props => {
   const [currentUser, setCurrentUser] = useState(null)
 
   return (
-    <CurrentUserContext.Provider value={currentUser, setCurrentUser}>
+    <CurrentUserContext.Provider value={{currentUser, setCurrentUser}}>
       {props.children}
     </CurrentUserContext.Provider>
   )

@@ -1,10 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
-import { CurrentUserContext } from '../Contexts/CurrentUserContext'
 
 const NavBar = () => {
-
-  const { currentUser } = useContext(CurrentUserContext)
 
   return (
     <Navbar bg="light" expand="lg">
@@ -12,9 +9,7 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          { currentUser ? 
-            <Nav.Link href="/">Home</Nav.Link> : <Nav.Link href="/login">Login</Nav.Link>
-          }
+          <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/users">Users</Nav.Link>
           <Nav.Link href="/games">Games</Nav.Link>
           <NavDropdown title="More Options" id="basic-nav-dropdown">
